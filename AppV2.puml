@@ -1,0 +1,37 @@
+@startuml AppV2
+
+skinparam ClassAttributeIconSize 0
+hide circle
+
+class Posicion {
+    - double x
+    - double y
+    + Posicion(double x, double y)
+    + double getX ()
+    + double getY ()
+}
+
+class Circulo {
+    - double radio
+    - Posicion pos
+    + Circulo (double radio)
+    + double getPerimetro ()
+    + double getSuperficie ()
+}
+
+class Rectangulo {
+    - double lado1
+    - double lado2
+    - Posicion pos
+    + Rectangulo (double l1, double l2)
+    + double getPerimetro ()
+    + double getSuperficie ()
+}
+
+App --> Circulo
+App --> Rectangulo
+
+Circulo --> Posicion
+Rectangulo -->Posicion
+
+@enduml
