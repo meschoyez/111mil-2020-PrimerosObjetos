@@ -1,0 +1,16 @@
+@startuml App
+
+skinparam ClassAttributeIconSize 0
+hide circle
+
+class Rectangulo {
+    - double lado1
+    - double lado2
+    - double x
+    - double y
+    + Rectangulo (double l1, double l2)
+    + double getPerimetro ()
+    + double getSuperficie ()
+}
+
+@enduml

@@ -7,7 +7,7 @@ public class App {
 
         System.out.println(miCirculo.getRadio());
         System.out.println(otroCirculo.getRadio());
-
+        
         miCirculo.setRadio(2.5);
         System.out.println(miCirculo.getRadio());
     }

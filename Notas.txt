@@ -1,0 +1,9 @@
+UML - Unified Modeling Language - Lenguaje Unificado de Modelado
+
+Vamos a usar PlantUML
+
+Diagramas de Clase -> Expresan las clases y sus relaciones
+
+Diagramas de Colaboración (extensión de diagramas de flujo)
+
+Diagrama de Secuencia

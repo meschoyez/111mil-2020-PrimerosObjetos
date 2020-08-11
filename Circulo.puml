@@ -1,0 +1,15 @@
+@startuml Circulo
+
+skinparam ClassAttributeIconSize 0
+hide circle
+
+class Circulo {
+    - double radio
+    - double x
+    - double y
+    + Circulo (double radio)
+    + setRadio (double radio)
+    + double getRadio ()
+}
+
+@enduml
