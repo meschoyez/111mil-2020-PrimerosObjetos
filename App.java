@@ -31,5 +31,16 @@ public class App {
         miVentana.setColorDeLapiz(Color.GREEN);
 
         miVentana.rellenarCirculo(otroCirculo.getX(), otroCirculo.getY(), otroCirculo.getDiametro());
+
+        // Dibujar un rectangulo de color ROJO (RED)
+        // rellenarRectangulo(int xPos, int yPos, int ancho, int alto)
+
+        miVentana.espera(30000);
+        miVentana.borrarCirculo(miCirculo.getX(), miCirculo.getY(), miCirculo.getDiametro());
+        // miCirculo.setX(250);
+        miCirculo.setY(150);
+        miVentana.setColorDeLapiz(Color.BLUE);
+        miVentana.rellenarCirculo(miCirculo.getX(), miCirculo.getY(), miCirculo.getDiametro());
+
     }
 }
