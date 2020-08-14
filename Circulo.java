@@ -4,18 +4,18 @@ public class Circulo {
     // Caracteristicas - Comportamientos - Identidad
 
     // Caracteristicas (campos del objeto o de la clase)
-    private static final double MAX_RADIO = 100.0;
+    private static final int MAX_RADIO = 1000;
     // static -> campo de la clase
     // final -> hace que sea un valor constante (no modificable - inmutable)
-    private double radio; // int char
-    private double x;
-    private double y;
+    private int radio; // int char
+    private int x;
+    private int y;
     // Aclaracion -> Datos tipo objeto Integer, Double, Char, Boolean
 
     // Comportamientos (metodos)
 
     // Constructor -> crear objetos de la clase
-    public Circulo (double r) {
+    public Circulo (int r) {
         radio = r;
     }
 
@@ -28,27 +28,33 @@ public class Circulo {
     }
 
     // setters y getters -> son metodos de acceso a los campos
-    public double getRadio() {
+    public int getRadio() {
         return radio;
     }
 
-    public void setRadio(double radio) {
+    public int getDiametro() {
+        return radio * 2;
+    }
+
+    public void setRadio(int radio) {
+        // this = este
+        // asignar radio al campo radio de este objeto
         this.radio = radio;
     }
 
-    public double getX() {
+    public int getX() {
         return x;
     }
 
-    public void setX(double x) {
+    public void setX(int x) {
         this.x = x;
     }
 
-    public double getY() {
+    public int getY() {
         return y;
     }
 
-    public void setY(double y) {
+    public void setY(int y) {
         this.y = y;
     }
 
