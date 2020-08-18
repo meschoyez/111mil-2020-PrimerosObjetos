@@ -9,12 +9,12 @@ public class Rectangulo {
      * Este metodo establece el color del Rectangulo segun
      * la superficie configurada.
      * 
-     * Si superficie <   500 -> tiene color azul
-     * Si superficie <  1000 -> tiene color verde
-     * Si superficie <  1500 -> tiene color amarillo
-     * Si superficie <  2000 -> tiene color naranja
-     * Si superficie <  2500 -> tiene color rojo
-     * Si superficie >= 3000 -> tiene color magenta
+     * Si superficie <   500 -> tiene color azul (Color.BLUE)
+     * Si superficie <  1000 -> tiene color verde (Color.GREEN)
+     * Si superficie <  1500 -> tiene color amarillo (Color.YELLOW)
+     * Si superficie <  2000 -> tiene color naranja (Color.ORANGE)
+     * Si superficie <  2500 -> tiene color rojo (Color.RED)
+     * Si superficie >= 3000 -> tiene color magenta (Color.MAGENTA)
      */
     private void determinarColor () {
         // TODO implementar

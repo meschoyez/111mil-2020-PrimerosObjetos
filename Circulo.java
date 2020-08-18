@@ -27,12 +27,12 @@ public class Circulo {
      * Este metodo establece el color del circulo segun
      * el radio configurado.
      * 
-     * Si radio < 100  -> tiene color azul
-     * Si radio < 200  -> tiene color verde
-     * Si radio < 300  -> tiene color amarillo
-     * Si radio < 400  -> tiene color naranja
-     * Si radio < 500  -> tiene color rojo
-     * Si radio >= 600 -> tiene color magenta
+     * Si radio < 100  -> tiene color azul (Color.BLUE)
+     * Si radio < 200  -> tiene color verde (Color.GREEN)
+     * Si radio < 300  -> tiene color amarillo (Color.YELLOW)
+     * Si radio < 400  -> tiene color naranja (Color.ORANGE)
+     * Si radio < 500  -> tiene color rojo (Color.RED)
+     * Si radio >= 600 -> tiene color magenta (Color.MAGENTA)
      */
     private void determinarColor () {
         if (radio < 200) {
