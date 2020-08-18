@@ -1,3 +1,5 @@
+import java.awt.Color;
+
 // Modificador visibilidad - palabra reservada - Nombre de la clase
 // Identificadores son CamelCase
 public class Circulo {
@@ -7,7 +9,8 @@ public class Circulo {
     private static final int MAX_RADIO = 1000;
     // static -> campo de la clase
     // final -> hace que sea un valor constante (no modificable - inmutable)
-    private int radio; // int char
+    private Color color ;
+    private int radio = 10; // Valor inicial por si me dan uno fuera de rango
     private int x;
     private int y;
     // Aclaracion -> Datos tipo objeto Integer, Double, Char, Boolean
@@ -15,8 +18,31 @@ public class Circulo {
     // Comportamientos (metodos)
 
     // Constructor -> crear objetos de la clase
-    public Circulo (int r) {
-        radio = r;
+    public Circulo (int radio) {
+        setRadio(radio);
+        determinarColor();
+    }
+
+    /**
+     * Este metodo establece el color del circulo segun
+     * el radio configurado.
+     * 
+     * Si radio < 200  -> tiene color verde
+     * Si radio < 500  -> tiene color amarillo
+     * Si radio >= 500 -> tiene color rojo
+     */
+    private void determinarColor () {
+        if (radio < 200) {
+            setColor(Color.GREEN);
+        }
+        else {
+            if (radio < 500) {
+                setColor(Color.YELLOW);
+            }
+            else {
+                setColor(Color.RED);
+            }
+        }
     }
 
     public double getPerimetro () {
@@ -39,7 +65,9 @@ public class Circulo {
     public void setRadio(int radio) {
         // this = este
         // asignar radio al campo radio de este objeto
-        this.radio = radio;
+        if ((0 < radio) && (radio < MAX_RADIO)) {
+            this.radio = radio;
+        }
     }
 
     public int getX() {
@@ -56,6 +84,14 @@ public class Circulo {
 
     public void setY(int y) {
         this.y = y;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
     }
 
 

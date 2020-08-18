@@ -12,26 +12,37 @@ class Posicion {
 }
 
 class Circulo {
+    - MAX_RADIO = 1000
+    - Color color
     - double radio
     - Posicion pos
+    - String nombre
     + Circulo (double radio)
+    - determinarColor ()
     + double getPerimetro ()
     + double getSuperficie ()
 }
 
 class Rectangulo {
+    - MAX_LADO = 1000
+    - Color color
     - double lado1
     - double lado2
     - Posicion pos
+    - String nombre
     + Rectangulo (double l1, double l2)
+    - determinarColor ()
     + double getPerimetro ()
     + double getSuperficie ()
 }
 
 App --> Circulo
 App --> Rectangulo
+App -> Canvas
 
 Circulo --> Posicion
+Circulo -> Color
 Rectangulo -->Posicion
+Color <- Rectangulo
 
 @enduml
