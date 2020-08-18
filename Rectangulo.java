@@ -4,6 +4,23 @@ public class Rectangulo {
     private int x;
     private int y;
 
+
+    /**
+     * Este metodo establece el color del Rectangulo segun
+     * la superficie configurada.
+     * 
+     * Si superficie <   500 -> tiene color azul
+     * Si superficie <  1000 -> tiene color verde
+     * Si superficie <  1500 -> tiene color amarillo
+     * Si superficie <  2000 -> tiene color naranja
+     * Si superficie <  2500 -> tiene color rojo
+     * Si superficie >= 3000 -> tiene color magenta
+     */
+    private void determinarColor () {
+        // TODO implementar
+    }
+
+
     public int getLado1() {
         return lado1;
     }
