@@ -35,10 +35,10 @@ public class Circulo {
      * Si radio >= 600 -> tiene color magenta (Color.MAGENTA)
      */
     private void determinarColor () {
-        if (radio < 200) {
+        if (getRadio() < 200) {
             setColor(Color.GREEN);
         }
-        else if (radio < 500) {
+        else if (getRadio() < 500) {
             setColor(Color.YELLOW);
         }
         else {

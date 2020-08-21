@@ -5,7 +5,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         Circulo circulo1 = new Circulo (100);
         Circulo circulo2 = new Circulo (300);
-        Circulo circulo3 = new Circulo (600);
+        Circulo circulo3 = new Circulo (1600);
         // Codificar acciones parecidas para la 
         // clase Rectangulo
         // Rectangulo ...
@@ -31,14 +31,38 @@ public class App {
         miVentana.rellenarCirculo(circulo1.getX(), circulo1.getY(), circulo1.getDiametro());
 
         // Dibujar un rectangulo de color ROJO (RED)
+        // Rectangulo r = new Rectangulo();
         // rellenarRectangulo(int xPos, int yPos, int ancho, int alto)
+        // miVentana.rellenarRectangulo(r.getX(), r.getY(), 400, 300);
 
-        // miVentana.espera(30000);
-        // miVentana.borrarCirculo(circulo1.getX(), circulo1.getY(), circulo1.getDiametro());
-        // // circulo1.setX(250);
-        // circulo1.setY(150);
-        // miVentana.setColorDeLapiz(Color.BLUE);
-        // miVentana.rellenarCirculo(circulo1.getX(), circulo1.getY(), circulo1.getDiametro());
+
+        /**
+         * Ciclos de repeticion -> permiten iterar
+         * 
+         * while -> (hacer mientras) -> repeticion indefinida
+         * 
+         * for -> (para) -> repeticion definida
+         */
+        miVentana.espera(10000);
+        // int repeticiones = 0;
+        // while (repeticiones < 5) {
+        //     miVentana.borrarCirculo(circulo1.getX(), circulo1.getY(), circulo1.getDiametro());
+        //     circulo1.setX( circulo1.getX() + 10 );
+        //     miVentana.rellenarCirculo(circulo1.getX(), circulo1.getY(), circulo1.getDiametro());
+        //     repeticiones = repeticiones + 1;
+        //     miVentana.espera(500);
+        // }
+        for ( int repeticiones = 0 ; repeticiones < 100 ; repeticiones++ ) {
+            miVentana.borrarCirculo(circulo1.getX(), circulo1.getY(), circulo1.getDiametro());
+            circulo1.setX( circulo1.getX() + 10 );
+            circulo1.setY( circulo1.getY() - 5 );
+            miVentana.rellenarCirculo(circulo1.getX(), circulo1.getY(), circulo1.getDiametro());
+            miVentana.espera(250);
+        }
+        
+        // DESAFIO
+        // Hacer que un circulo crezca de tamaño, por ej. comenzar con
+        //  radio = 50 y que llegue a radio = 400
 
     }
 }

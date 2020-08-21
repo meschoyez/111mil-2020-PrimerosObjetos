@@ -4,6 +4,7 @@ public class Rectangulo {
     private int x;
     private int y;
 
+    // Falta definir los constructures
 
     /**
      * Este metodo establece el color del Rectangulo segun
@@ -14,7 +15,7 @@ public class Rectangulo {
      * Si superficie <  1500 -> tiene color amarillo (Color.YELLOW)
      * Si superficie <  2000 -> tiene color naranja (Color.ORANGE)
      * Si superficie <  2500 -> tiene color rojo (Color.RED)
-     * Si superficie >= 3000 -> tiene color magenta (Color.MAGENTA)
+     * Si superficie >= 2500 -> tiene color magenta (Color.MAGENTA)
      */
     private void determinarColor () {
         // TODO implementar
