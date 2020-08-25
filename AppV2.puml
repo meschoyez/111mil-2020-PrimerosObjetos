@@ -3,31 +3,40 @@
 skinparam ClassAttributeIconSize 0
 hide circle
 
+class App {
+    - Canvas miVentana
+    - ArrayList<Circulo> circulos
+    - ArrayList<Rectangulo> rectangulos
+    + ejecutar ()
+    + RebotePelota ()
+    + ReboteRectangulo ()
+}
+
 class Posicion {
-    - double x
-    - double y
-    + Posicion(double x, double y)
-    + double getX ()
-    + double getY ()
+    - int x
+    - int y
+    + Posicion(int x, int y)
+    + int getX ()
+    + int getY ()
 }
 
 class Circulo {
     - MAX_RADIO = 1000
     - Color color
-    - double radio
+    - int radio
     - Posicion pos
     - String nombre
     + Circulo (double radio)
     - determinarColor ()
-    + double getPerimetro ()
-    + double getSuperficie ()
+    + getPerimetro () : double
+    + getSuperficie () : double
 }
 
 class Rectangulo {
     - MAX_LADO = 1000
     - Color color
-    - double lado1
-    - double lado2
+    - int lado1
+    - int lado2
     - Posicion pos
     - String nombre
     + Rectangulo (double l1, double l2)

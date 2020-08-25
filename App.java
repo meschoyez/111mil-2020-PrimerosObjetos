@@ -1,9 +1,15 @@
 import java.awt.Color;
+import java.util.ArrayList;
 
 public class App {
     // Campos para su funcionamiento
     // Canvas es la ventana para graficar
     private Canvas miVentana;
+    // Mas informacion sobre ArrayList en la API de Java
+    // API - Application Programming Interface
+    //       Interface para Programacion de Aplicaciones
+    private ArrayList<Circulo> circulos;
+    private ArrayList<Rectangulo> rectangulos;
     private int ancho = 800;
     private int alto = 600;
 
@@ -11,6 +17,8 @@ public class App {
      * Constructor sin parametros
      */
     public App () {
+        circulos = new ArrayList<>();
+        rectangulos = new ArrayList<>();
         miVentana = new Canvas("Hola Ventana", ancho, alto);
         miVentana.setVisible(true);
     }
@@ -29,9 +37,13 @@ public class App {
      * Metodo para ejecutar las diferentes actividades
      */
     public void ejecutar () {
+        CrearFigurasGeometricas();
         // PrimerosEjemplos();
         // Metodo para movimiento de circulo
-        PelotaRebotando();
+        // PelotaRebotando();
+        GraficarCirculosColeccionados();
+        // TODO Implementar el siguente metodo
+        GraficarRectangulosColeccionados();
     }
 
     public int getAncho () {
@@ -40,6 +52,59 @@ public class App {
 
     public int getAlto () {
         return alto;
+    }
+
+    /**
+     * Genera los objetos graficos y los agrega a la
+     * coleccion correspondiente
+     */
+    public void CrearFigurasGeometricas () {
+        System.out.println("Hay " + circulos.size() + " circulos creados");
+        // Creo el primer objeto circulo
+        Circulo circulo = new Circulo (100);
+        circulo.setX(150);
+        circulo.setY(150);
+        // Lo agrego en la coleccion
+        circulos.add(circulo);
+        System.out.println("Hay " + circulos.size() + " circulos creados");
+
+        // Creo el segundo objeto circulo
+        circulo = new Circulo (50);
+        circulo.setX(300);
+        circulo.setY(250);
+        // Lo agrego en la coleccion
+        circulos.add(circulo);
+        System.out.println("Hay " + circulos.size() + " circulos creados");
+
+        // Creo el tercer objeto circulo
+        circulo = new Circulo (150);
+        circulo.setX(400);
+        circulo.setY(350);
+        // Lo agrego en la coleccion
+        circulos.add(circulo);
+        System.out.println("Hay " + circulos.size() + " circulos creados");
+
+        // TODO Agregar 3 rectangulos a la coleccion
+    }
+
+    /**
+     * Toma uno a uno los circulos de la coleccion y los
+     * grafica en el canvas
+     */    
+    public void GraficarCirculosColeccionados () {
+        // Con colecciones puedo usar for-each (para cada elemento)
+        for (Circulo c : circulos) {
+            miVentana.setColorDeLapiz(c.getColor());
+            miVentana.rellenarCirculo(c.getX(), c.getY(), c.getDiametro());
+        }
+    }
+
+    /**
+     * Toma uno a uno los rectangulos de la coleccion y los
+     * grafica en el canvas
+     */    
+    public void GraficarRectangulosColeccionados () {
+        // TODO implementar el metodo
     }
 
     /**
@@ -61,10 +126,17 @@ public class App {
                 desplazamiento = - desplazamiento;
             }
             circulo.setX( circulo.getX() + desplazamiento );
+
+            // Agreguen movimiento vertical
+
             // circulo.setY( circulo.getY() - 5 );
             miVentana.rellenarCirculo(circulo.getX(), circulo.getY(), circulo.getDiametro());
             miVentana.espera(75);
         }
+        
+    }
+
+    public void RectanguloRebotando () {
         
     }
 
