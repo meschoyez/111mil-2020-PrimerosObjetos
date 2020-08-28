@@ -13,6 +13,8 @@ public class Circulo {
     private int radio = 10; // Valor inicial por si me dan uno fuera de rango
     private int x;
     private int y;
+    private int despX;
+    private int despY;
     // Aclaracion -> Datos tipo objeto Integer, Double, Char, Boolean
 
     // Comportamientos (metodos)
@@ -94,6 +96,30 @@ public class Circulo {
 
     public void setColor(Color color) {
         this.color = color;
+    }
+
+    /**
+     * Actualizar posicion del objeto
+     */
+    public void actualizarPosicion () {
+        setX( getX() + getDespX() );
+        setY( getY() + getDespY() );
+    }
+
+    public int getDespX() {
+        return despX;
+    }
+
+    public void setDespX(int despX) {
+        this.despX = despX;
+    }
+
+    public int getDespY() {
+        return despY;
+    }
+
+    public void setDespY(int despY) {
+        this.despY = despY;
     }
 
 

@@ -41,17 +41,16 @@ public class App {
         // PrimerosEjemplos();
         // Metodo para movimiento de circulo
         // PelotaRebotando();
+        miVentana.espera(15000);
         GraficarCirculosColeccionados();
+        for (int i = 0; i < 10 ; i++) {
+            miVentana.espera(1000);
+            BorrarCirculosColeccionados();
+            ActualizarPosicionCirculos();
+            GraficarCirculosColeccionados();
+        }
         // TODO Implementar el siguente metodo
-        GraficarRectangulosColeccionados();
-    }
-
-    public int getAncho () {
-        return ancho;
-    }
-
-    public int getAlto () {
-        return alto;
+        // GraficarRectangulosColeccionados();
     }
 
     /**
@@ -64,6 +63,8 @@ public class App {
         Circulo circulo = new Circulo (100);
         circulo.setX(150);
         circulo.setY(150);
+        circulo.setDespX(5);
+        circulo.setDespY(5);
         // Lo agrego en la coleccion
         circulos.add(circulo);
         System.out.println("Hay " + circulos.size() + " circulos creados");
@@ -72,6 +73,9 @@ public class App {
         circulo = new Circulo (50);
         circulo.setX(300);
         circulo.setY(250);
+        circulo.setDespX(-15);
+        circulo.setDespY(5);
+        circulo.setColor(Color.RED);
         // Lo agrego en la coleccion
         circulos.add(circulo);
         System.out.println("Hay " + circulos.size() + " circulos creados");
@@ -80,6 +84,9 @@ public class App {
         circulo = new Circulo (150);
         circulo.setX(400);
         circulo.setY(350);
+        circulo.setDespX(5);
+        circulo.setDespY(-15);
+        circulo.setColor(Color.BLUE);
         // Lo agrego en la coleccion
         circulos.add(circulo);
         System.out.println("Hay " + circulos.size() + " circulos creados");
@@ -96,6 +103,28 @@ public class App {
         for (Circulo c : circulos) {
             miVentana.setColorDeLapiz(c.getColor());
             miVentana.rellenarCirculo(c.getX(), c.getY(), c.getDiametro());
+        }
+    }
+
+    /**
+     * Toma uno a uno los circulos de la coleccion y los
+     * grafica en el canvas
+     */    
+    public void BorrarCirculosColeccionados () {
+        // Con colecciones puedo usar for-each (para cada elemento)
+        for (Circulo c : circulos) {
+            miVentana.borrarCirculo(c.getX(), c.getY(), c.getDiametro());
+        }
+    }
+
+    /**
+     * Toma uno a uno los circulos de la coleccion y les
+     * pide que actualicen su posicion
+     */    
+    public void ActualizarPosicionCirculos () {
+        // Con colecciones puedo usar for-each (para cada elemento)
+        for (Circulo c : circulos) {
+            c.actualizarPosicion();
         }
     }
 
@@ -200,4 +229,13 @@ public class App {
         //  radio = 50 y que llegue a radio = 400
 
     }
+
+    public int getAncho () {
+        return ancho;
+    }
+
+    public int getAlto () {
+        return alto;
+    }
+
 }
