@@ -1,10 +1,12 @@
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class App {
     // Campos para su funcionamiento
     // Canvas es la ventana para graficar
     private Canvas miVentana;
+    private Random aleatorio;
     // Mas informacion sobre ArrayList en la API de Java
     // API - Application Programming Interface
     //       Interface para Programacion de Aplicaciones
@@ -17,6 +19,7 @@ public class App {
      * Constructor sin parametros
      */
     public App () {
+        aleatorio = new Random();
         circulos = new ArrayList<>();
         rectangulos = new ArrayList<>();
         miVentana = new Canvas("Hola Ventana", ancho, alto);
@@ -37,20 +40,38 @@ public class App {
      * Metodo para ejecutar las diferentes actividades
      */
     public void ejecutar () {
-        CrearFigurasGeometricas();
+        // CrearFigurasGeometricas();
+        CrearFigurasAleatorias(30);
         // PrimerosEjemplos();
         // Metodo para movimiento de circulo
         // PelotaRebotando();
         miVentana.espera(15000);
         GraficarCirculosColeccionados();
-        for (int i = 0; i < 10 ; i++) {
-            miVentana.espera(1000);
+        for (int i = 0; i < 100 ; i++) {
+            miVentana.espera(500);
             BorrarCirculosColeccionados();
             ActualizarPosicionCirculos();
             GraficarCirculosColeccionados();
         }
         // TODO Implementar el siguente metodo
         // GraficarRectangulosColeccionados();
+    }
+
+    /**
+     * Genera los objetos graficos en forma aleatoria
+     * y los agrega a la coleccion correspondiente
+     * @param cantidad Cantidad de figuras a crear
+     */
+    public void CrearFigurasAleatorias (int cantidad) {
+        for (int c = 0; c < cantidad; c++) {
+            Circulo circulo = new Circulo ( aleatorio.nextInt(91) + 10 );
+            circulo.setX( aleatorio.nextInt( getAncho() ) );
+            circulo.setY( aleatorio.nextInt( getAlto() ) );
+            circulo.setDespX( aleatorio.nextInt( 31 ) - 15 );
+            circulo.setDespY( aleatorio.nextInt( 31 ) - 15 );
+            // Lo agrego en la coleccion
+            circulos.add(circulo);
+        }
     }
 
     /**
@@ -230,10 +251,18 @@ public class App {
 
     }
 
+    /**
+     * El ancho de la ventana grafica
+     * @return el ancho
+     */
     public int getAncho () {
         return ancho;
     }
 
+    /**
+     * El alto de la ventana grafica
+     * @return el alto
+     */
     public int getAlto () {
         return alto;
     }
