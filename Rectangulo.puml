@@ -11,6 +11,8 @@ class Rectangulo {
     + Rectangulo (double l1, double l2)
     + double getPerimetro ()
     + double getSuperficie ()
+    + actualizarPosicion ()
+    + determinarColor ()
 }
 
 @enduml

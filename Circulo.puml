@@ -10,6 +10,8 @@ class Circulo {
     + Circulo (double radio)
     + setRadio (double radio)
     + double getRadio ()
+    + actualizarPosicion ()
+    + determinarColor ()
 }
 
 @enduml

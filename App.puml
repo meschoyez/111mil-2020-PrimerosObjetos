@@ -3,26 +3,65 @@
 skinparam ClassAttributeIconSize 0
 hide circle
 
+class App {
+    - Canvas miVentana
+    - ArrayList<Circulo> circulos
+    - ArrayList<Rectangulo> rectangulos
+    + ejecutar ()
+    + CrearFigurasGeometricas()
+    + CrearFigurasAleatorias(int)
+    + GraficarCirculosColeccionados ()
+    + BorrarCirculosColeccionados ()
+    + GraficarRectangulosColeccionados ()
+    + BorrarRectangulosColeccionados ()
+    + RebotePelota ()
+    + ReboteRectangulo ()
+}
+
+class Posicion {
+    - int x
+    - int y
+    + Posicion(int x, int y)
+    + int getX ()
+    + int getY ()
+}
+
 class Circulo {
-    - double radio
-    - double x
-    - double y
+    - MAX_RADIO = 1000
+    - Color color
+    - int radio
+    - Posicion pos
+    - String nombre
     + Circulo (double radio)
-    + double getPerimetro ()
-    + double getSuperficie ()
+    - determinarColor ()
+    + getPerimetro () : double
+    + getSuperficie () : double
+    + actualizarPosicion ()
+    + determinarColor ()
 }
 
 class Rectangulo {
-    - double lado1
-    - double lado2
-    - double x
-    - double y
+    - MAX_LADO = 1000
+    - Color color
+    - int lado1
+    - int lado2
+    - Posicion pos
+    - String nombre
     + Rectangulo (double l1, double l2)
+    - determinarColor ()
     + double getPerimetro ()
     + double getSuperficie ()
+    + actualizarPosicion ()
+    + determinarColor ()
 }
 
 App --> Circulo
 App --> Rectangulo
+App -> Canvas
+
+Circulo --> Posicion
+Circulo -> Color
+Rectangulo -->Posicion
+Color <- Rectangulo
 
 @enduml
