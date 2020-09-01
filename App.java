@@ -40,22 +40,81 @@ public class App {
      * Metodo para ejecutar las diferentes actividades
      */
     public void ejecutar () {
-        // CrearFigurasGeometricas();
-        CrearFigurasAleatorias(30);
         // PrimerosEjemplos();
         // Metodo para movimiento de circulo
         // PelotaRebotando();
+        // CrearFigurasGeometricas();
+        CrearFigurasAleatorias(30);
+        // Variable local para un subconjunto de los circulos
+        ArrayList<Circulo> enRango;
+        // Selecciona los circulos que cumplen la condicion del radio
+        enRango = CirculosConRadioEnRango(40, 70);
+        // Establece el color de los circulos de la coleccion
+        PintarCirculos(enRango, Color.BLUE);
+        // Selecciona los circulos que cumplen la condicion del radio
+        enRango = CirculosConRadioEnRango(70, 100);
+        // Establece el color de los circulos de la coleccion
+        PintarCirculos(enRango, Color.RED);
         miVentana.espera(15000);
         GraficarCirculosColeccionados();
         for (int i = 0; i < 100 ; i++) {
             miVentana.espera(500);
             BorrarCirculosColeccionados();
             ActualizarPosicionCirculos();
+            if (i == 15) {
+                PintarCirculos(circulos, Color.MAGENTA);
+            }
             GraficarCirculosColeccionados();
         }
-        // TODO Implementar el siguente metodo
-        // GraficarRectangulosColeccionados();
+        // TODO - Repetir la animacion para Rectangulo
     }
+
+    /**
+     * Selecciona los circulos que cumplen la condicion del radio
+     * @param min Radio minimo a considerar
+     * @param max Radio maximo a considerar
+     * @return La lista con circulos que cumplen la condicion
+     */
+    public ArrayList<Circulo> CirculosConRadioEnRango(int min, int max) {
+        // Creo la nueva lista de circulos
+        ArrayList<Circulo> lista = new ArrayList<>();
+        for (Circulo c : circulos) {
+            // Si esta en rango
+            if ( (min <= c.getRadio()) && (c.getRadio() <= max) ) {
+                // Lo agrego a la NUEVA lista
+                lista.add(c);
+            }
+        }
+        // Devuelvo los circulos que cumplen la condicion
+        return lista;
+    }
+    
+    // TODO - RectangulosConSuperficieEnRango()
+
+    /**
+     * Toma los circulos que se encuentran en las posiciones
+     * entre 0 y 300 en X y entre 0 y 300 en Y
+     * @return La lista de circulos en ese sector
+     */
+    public ArrayList<Circulo> CirculosEnUnArea () {
+        // TODO - Implementar
+        return null; // Reemplazar por la lista
+    }
+
+    // TODO - RectangulosEnUnArea()
+
+    /**
+     * Establece el color de los circulos de la coleccion
+     * @param lista Los circulos a pintar
+     * @param color El color para pintar los circulos
+     */
+    public void PintarCirculos(ArrayList<Circulo> lista, Color color) {
+        for (Circulo c : lista) {
+            c.setColor(color);
+        }
+    }
+
+    // TODO - PintarRectangulos()
 
     /**
      * Genera los objetos graficos en forma aleatoria
@@ -71,6 +130,7 @@ public class App {
             circulo.setDespY( aleatorio.nextInt( 31 ) - 15 );
             // Lo agrego en la coleccion
             circulos.add(circulo);
+            // TODO - Repetir lo mismo para Rectangulo
         }
     }
 
