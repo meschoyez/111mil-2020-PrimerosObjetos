@@ -2,19 +2,14 @@ import java.awt.Color;
 
 // Modificador visibilidad - palabra reservada - Nombre de la clase
 // Identificadores son CamelCase
-public class Circulo {
+public class Circulo extends FiguraGeometrica { // Refactorizacion
     // Caracteristicas - Comportamientos - Identidad
 
     // Caracteristicas (campos del objeto o de la clase)
     private static final int MAX_RADIO = 1000;
     // static -> campo de la clase
     // final -> hace que sea un valor constante (no modificable - inmutable)
-    private Color color ;
     private int radio = 10; // Valor inicial por si me dan uno fuera de rango
-    private int x;
-    private int y;
-    private int despX;
-    private int despY;
     // Aclaracion -> Datos tipo objeto Integer, Double, Char, Boolean
 
     // Comportamientos (metodos)
@@ -74,53 +69,5 @@ public class Circulo {
         }
     }
 
-    public int getX() {
-        return x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
-    }
-
-    /**
-     * Actualizar posicion del objeto
-     */
-    public void actualizarPosicion () {
-        setX( getX() + getDespX() );
-        setY( getY() + getDespY() );
-    }
-
-    public int getDespX() {
-        return despX;
-    }
-
-    public void setDespX(int despX) {
-        this.despX = despX;
-    }
-
-    public int getDespY() {
-        return despY;
-    }
-
-    public void setDespY(int despY) {
-        this.despY = despY;
-    }
-
-
+    
 }

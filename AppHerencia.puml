@@ -1,0 +1,66 @@
+@startuml AppHerencia
+
+skinparam ClassAttributeIconSize 0
+hide circle
+
+class App {
+    - Canvas miVentana
+    - ArrayList<???> 
+    + ejecutar ()
+    + CrearFigurasGeometricas()
+    + CrearFigurasAleatorias(int)
+    + GraficarCirculosColeccionados ()
+    + BorrarCirculosColeccionados ()
+    + GraficarRectangulosColeccionados ()
+    + BorrarRectangulosColeccionados ()
+    + RebotePelota ()
+    + ReboteRectangulo ()
+}
+
+class Posicion {
+    - int x
+    - int y
+    + Posicion(int x, int y)
+    + int getX ()
+    + int getY ()
+}
+
+class FiguraGeometrica {
+    - Color color
+    - Posicion pos
+    - String nombre
+    + actualizarPosicion ()
+}
+
+class Circulo {
+    - MAX_RADIO = 1000
+    - int radio
+    + Circulo (double radio)
+    - determinarColor ()
+    + getPerimetro () : double
+    + getSuperficie () : double
+    + determinarColor ()
+}
+
+class Rectangulo {
+    - MAX_LADO = 1000
+    - int lado1
+    - int lado2
+    + Rectangulo (double l1, double l2)
+    - determinarColor ()
+    + double getPerimetro ()
+    + double getSuperficie ()
+    + determinarColor ()
+}
+
+App -> FiguraGeometrica
+App -left-> Canvas
+
+FiguraGeometrica <|-- Circulo
+FiguraGeometrica <|-- Rectangulo
+FiguraGeometrica <|-- Triangulo
+
+FiguraGeometrica -> Posicion
+FiguraGeometrica -up-> Color
+
+@enduml

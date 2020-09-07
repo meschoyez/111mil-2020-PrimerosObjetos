@@ -12,6 +12,7 @@ public class App {
     //       Interface para Programacion de Aplicaciones
     private ArrayList<Circulo> circulos;
     private ArrayList<Rectangulo> rectangulos;
+    // private ArrayList<FiguraGeometrica> figuras;
     private int ancho = 800;
     private int alto = 600;
 
@@ -34,13 +35,28 @@ public class App {
     public static void main(String[] args) throws Exception {
         App miAplicacion = new App();
         // miAplicacion.ejecutar();
-        miAplicacion.imagenes();
+        // miAplicacion.imagenes();
+        miAplicacion.triangulos();
     }
 
     public void imagenes () {
         Dibujo dibujo = new Dibujo();
         miVentana.dibujarImagen(dibujo.getImagen(), dibujo.getAncho(), dibujo.getAlto());
     }
+
+    public void triangulos () {
+        Triangulo t1 = new Triangulo(200, 100, Color.RED);
+        t1.setX(200);
+        t1.setY(200);
+        miVentana.setColorDeLapiz(t1.getColor());
+        miVentana.rellenarTriangulo(t1.getX(), t1.getY(), t1.getBase(), t1.getAltura());
+        Triangulo t2 = new Triangulo(100, 250, Color.BLUE);
+        t2.setX(500);
+        t2.setY(300);
+        miVentana.setColorDeLapiz(t2.getColor());
+        miVentana.rellenarTriangulo(t2.getX(), t2.getY(), t2.getBase(), t2.getAltura());
+    }
+
 
     /**
      * Metodo para ejecutar las diferentes actividades
