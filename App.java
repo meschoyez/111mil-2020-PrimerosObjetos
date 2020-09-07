@@ -33,7 +33,13 @@ public class App {
      */
     public static void main(String[] args) throws Exception {
         App miAplicacion = new App();
-        miAplicacion.ejecutar();
+        // miAplicacion.ejecutar();
+        miAplicacion.imagenes();
+    }
+
+    public void imagenes () {
+        Dibujo dibujo = new Dibujo();
+        miVentana.dibujarImagen(dibujo.getImagen(), dibujo.getAncho(), dibujo.getAlto());
     }
 
     /**
