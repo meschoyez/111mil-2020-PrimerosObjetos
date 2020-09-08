@@ -31,7 +31,7 @@ public class FiguraGeometrica {
         this.color = color;
     }
 
-    /**
+        /**
      * Actualizar posicion del objeto
      */
     public void actualizarPosicion () {

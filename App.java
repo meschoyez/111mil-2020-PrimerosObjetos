@@ -45,14 +45,16 @@ public class App {
     }
 
     public void triangulos () {
-        Triangulo t1 = new Triangulo(200, 100, Color.RED);
+        Triangulo t1 = new Triangulo(200, 100);
         t1.setX(200);
         t1.setY(200);
+        t1.setColor(Color.RED);
         miVentana.setColorDeLapiz(t1.getColor());
         miVentana.rellenarTriangulo(t1.getX(), t1.getY(), t1.getBase(), t1.getAltura());
-        Triangulo t2 = new Triangulo(100, 250, Color.BLUE);
+        Triangulo t2 = new Triangulo(100, 250);
         t2.setX(500);
         t2.setY(300);
+        t2.setColor(Color.BLUE);
         miVentana.setColorDeLapiz(t2.getColor());
         miVentana.rellenarTriangulo(t2.getX(), t2.getY(), t2.getBase(), t2.getAltura());
     }

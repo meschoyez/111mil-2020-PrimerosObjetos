@@ -2,7 +2,7 @@ import java.awt.Color;
 
 // Modificador visibilidad - palabra reservada - Nombre de la clase
 // Identificadores son CamelCase
-public class Circulo extends FiguraGeometrica { // Refactorizacion
+public class Circulo extends FiguraGeometrica {
     // Caracteristicas - Comportamientos - Identidad
 
     // Caracteristicas (campos del objeto o de la clase)
@@ -69,5 +69,4 @@ public class Circulo extends FiguraGeometrica { // Refactorizacion
         }
     }
 
-    
 }
